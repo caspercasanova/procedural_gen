@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://gs6i58rmdkvw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0wo2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_coykq"]
+material = SubResource("StandardMaterial3D_l0wo2")
+size = Vector3(0.5, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lmif"]
+albedo_color = Color(0.309804, 1, 0.00784314, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i6j5d"]
+material = SubResource("StandardMaterial3D_0lmif")
+size = Vector3(0.2, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chijq"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ob5p5"]
+material = SubResource("StandardMaterial3D_chijq")
+size = Vector3(0.2, 0.1, 0.1)
+
+[node name="Gate" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_coykq")
+
+[node name="Entrance" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+mesh = SubResource("BoxMesh_i6j5d")
+
+[node name="Exit" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+mesh = SubResource("BoxMesh_ob5p5")

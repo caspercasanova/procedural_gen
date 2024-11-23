@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgddi8o8u8202"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3tyg"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y045n"]
+material = SubResource("StandardMaterial3D_l3tyg")
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5ngk"]
+albedo_color = Color(0.160784, 0.870588, 0.105882, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_umhou"]
+material = SubResource("StandardMaterial3D_m5ngk")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Building" type="Node3D"]
+
+[node name="Building Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_y045n")
+
+[node name="Entrance" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+mesh = SubResource("BoxMesh_umhou")
+skeleton = NodePath("../Building Mesh")

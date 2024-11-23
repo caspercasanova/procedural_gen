@@ -1,0 +1,18 @@
+[gd_scene load_steps=8 format=3 uid="uid://bikh312wb00b"]
+
+[ext_resource type="Script" path="res://Base_Gen/base.gd" id="1_gqqcf"]
+[ext_resource type="PackedScene" uid="uid://u64opmjq7h57" path="res://Base_Gen/Tower.tscn" id="2_06reb"]
+[ext_resource type="PackedScene" uid="uid://bixvq04ho28g6" path="res://Base_Gen/Base_Center.tscn" id="3_hjvyu"]
+[ext_resource type="PackedScene" uid="uid://dspdwul4r6wko" path="res://Base_Gen/Road.tscn" id="4_rvgow"]
+[ext_resource type="PackedScene" uid="uid://cgddi8o8u8202" path="res://Base_Gen/Building.tscn" id="5_1lksl"]
+[ext_resource type="PackedScene" uid="uid://d0ylfn8rasd2b" path="res://Base_Gen/Sandbag.tscn" id="6_dblun"]
+[ext_resource type="PackedScene" uid="uid://gs6i58rmdkvw" path="res://Base_Gen/Gate.tscn" id="7_k5k2w"]
+
+[node name="Base" type="Node3D"]
+script = ExtResource("1_gqqcf")
+tower_scene = ExtResource("2_06reb")
+base_center_scene = ExtResource("3_hjvyu")
+road_scene = ExtResource("4_rvgow")
+building_scene = ExtResource("5_1lksl")
+sandbag_scene = ExtResource("6_dblun")
+gate_scene = ExtResource("7_k5k2w")
