@@ -1,8 +1,17 @@
 @tool
 extends Node3D
+## Steps to create 
+## Generate tower - think of them as verticies
+## Generate a base centerpoint
+## Generate a perimeter path 
+## - You can geneate a sandbag mesh ontop of the path and change its density 
+## Generate buildings within the perimeter of the towers
+## Generate Gate
+## Connect Gate to centerpoint
+## Connect buildings to centerpoint 
+## @experimental
 
 
-# We call them towers, but think of them as verticies
 @export var tower_scene: PackedScene
 @export var base_center_scene: PackedScene
 @export var road_scene: PackedScene
@@ -19,7 +28,6 @@ extends Node3D
 	set(value):
 		border_density = value
 		add_evenly_spaced_points(perimeter_curve, border_density)
-
 
 @export var clear_all_button: bool:
 	set(val):
@@ -263,8 +271,6 @@ func get_random_position_in_polygon() -> Vector3:
 	return random_position
 
 
-
-
 func add_evenly_spaced_points(curve: Curve3D, segment_length: int = 5, tolerance_length: = 20.0):
 	if(!curve):
 		return
@@ -274,9 +280,7 @@ func add_evenly_spaced_points(curve: Curve3D, segment_length: int = 5, tolerance
 	## Optionally, you can add these points back into the curve or use them directly
 	for point in even_points:
 		curve.add_point(point)
-	
-	
-	
+
 
 func generate_sandbag_wall():
 	if !perimeter_curve:
@@ -365,7 +369,6 @@ func clear_gate():
 	remove_child(gate)
 	gate.queue_free()
 	gate = null
-
 
 
 
